@@ -1,0 +1,40 @@
+name: Publish xkcd-pass to PyPI
+
+on: 
+  push:
+    branches:
+      - master
+  create:
+    tags:
+      - v*
+jobs:
+  build-n-publish:
+    name: Publish to PyPI
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@master
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install Python dependencies
+      uses: py-actions/py-dependency-install@v2
+    - name: Build a binary wheel and a source tarball
+      run: >-
+        python -m
+        build
+        --sdist
+        --wheel
+        --outdir dist/
+        .
+    - name: Publish to Test PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        repository_url: https://test.pypi.org/legacy/
+        skip_existing: true
+    - name: Publish to PyPI
+      if: startsWith(github.ref, 'refs/tags')
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        password: ${{ secrets.PYPI_API_TOKEN }}
