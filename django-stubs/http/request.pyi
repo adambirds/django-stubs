@@ -13,6 +13,8 @@ from django.urls import ResolverMatch
 from django.utils.datastructures import CaseInsensitiveMapping, ImmutableList, MultiValueDict
 from typing_extensions import Literal, TypeAlias
 
+from apps.tenants.models import Tenant
+
 RAISE_ERROR: object
 host_validation_re: Pattern[str]
 
@@ -37,6 +39,8 @@ class HttpRequest(BytesIO):
     path: str
     path_info: str
     method: str | None
+    tenant: Tenant
+    urlconf: str
     resolver_match: ResolverMatch | None
     content_type: str | None
     content_params: dict[str, str] | None

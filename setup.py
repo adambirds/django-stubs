@@ -22,7 +22,7 @@ with open("README.md") as f:
 dependencies = [
     "mypy>=0.980",
     "django",
-    "django-stubs-ext>=0.7.0",
+    "django-stubs-ext-adb>=0.7.0",
     "tomli",
     # Types:
     "typing-extensions",
@@ -35,17 +35,17 @@ extras_require = {
 }
 
 setup(
-    name="django-stubs",
+    name="django-stubs-adb",
     version="1.14.0",
     description="Mypy stubs for Django",
     long_description=readme,
     long_description_content_type="text/markdown",
     license="MIT",
-    url="https://github.com/typeddjango/django-stubs",
-    author="Maksim Kurnikov",
-    author_email="maxim.kurnikov@gmail.com",
-    maintainer="Nikita Sobolev",
-    maintainer_email="mail@sobolevn.me",
+    url="https://github.com/adambirds/django-stubs",
+    author="Adam Birds",
+    author_email="enquiries@adbwebdesigns.co.uk",
+    maintainer="Adam Birds",
+    maintainer_email="enquiries@adbwebdesigns.co.uk",
     py_modules=[],
     python_requires=">=3.7",
     install_requires=dependencies,
@@ -73,6 +73,6 @@ setup(
         "Framework :: Django :: 4.1",
     ],
     project_urls={
-        "Release notes": "https://github.com/typeddjango/django-stubs/releases",
+        "Release notes": "https://github.com/adambirds/django-stubs/releases",
     },
 )

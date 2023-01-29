@@ -11,17 +11,17 @@ dependencies = [
 ]
 
 setup(
-    name="django-stubs-ext",
+    name="django-stubs-ext-adb",
     version="0.7.0",
     description="Monkey-patching and extensions for django-stubs",
     long_description=readme,
     long_description_content_type="text/markdown",
     license="MIT",
-    url="https://github.com/typeddjango/django-stubs",
-    author="Simula Proxy",
-    author_email="3nki.nam.shub@gmail.com",
-    maintainer="Nikita Sobolev",
-    maintainer_email="mail@sobolevn.me",
+    url="https://github.com/adambirds/django-stubs",
+    author="Adam Birds",
+    author_email="enquiries@adbwebdesigns.co.uk",
+    maintainer="Adam Birds",
+    maintainer_email="enquiries@adbwebdesigns.co.uk",
     py_modules=[],
     python_requires=">=3.7",
     install_requires=dependencies,
@@ -45,6 +45,6 @@ setup(
         "Framework :: Django :: 4.1",
     ],
     project_urls={
-        "Release notes": "https://github.com/typeddjango/django-stubs/releases",
+        "Release notes": "https://github.com/adambirds/django-stubs/releases",
     },
 )
